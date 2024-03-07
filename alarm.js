@@ -120,3 +120,7 @@ function setAlarm(){
     }, 1000)
     
 }
+function stopAlarm(){
+    ringtone.pause()
+    ringtone.load();
+}
