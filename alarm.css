@@ -14,9 +14,7 @@ body{
     margin: 0 auto;
     margin-top: 80px;
     padding: 10px;
-    /* background-image: url(alarmbg); */
     background-image: url(two-indoors-lamps.jpg);
-    /* background-repeat: no-repeat; */
     background-size: contain;
 }
 .alarm{
@@ -58,7 +56,6 @@ body{
     justify-content: center;
 }
 .down{
-    /* display: flex; */
     width: 250PX;
     height: 100PX;
     border: 2px solid rgb(208,178,149);

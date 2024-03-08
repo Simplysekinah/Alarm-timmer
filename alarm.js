@@ -13,7 +13,6 @@ let year = document.getElementById("year")
 let real = document.getElementById("day")
 
 ringtone = new Audio("Asake_-_Mogbe.mp3")
-// getHours = getHours % 12 || 12
 setInterval(() => {
     let date = new Date()
     time.innerHTML = date.getHours() % 12
@@ -108,19 +107,21 @@ let years = date = new Date().getFullYear()
 year.innerHTML = years
 
 document.getElementById("real").innerHTML = new Date().getDate();
-
+let alarmring
 function setAlarm(){
-    setInterval(() => {
+    
+    alarmring=setInterval(() => {
         let date = new Date();
         if (date.getHours() % 12 == userHour.value && date.getMinutes() == userMin.value && amPm == userZone.value){
-            // alert("Alarm is ringing")
             ringtone.play()
-            // ringtone.loop = true
         }
     }, 1000)
     
 }
+
 function stopAlarm(){
     ringtone.pause()
-    ringtone.load();
+    ringtone.currentTime = 0
+    clearInterval(alarmring)
+    
 }
