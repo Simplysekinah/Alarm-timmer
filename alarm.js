@@ -107,21 +107,23 @@ let years = date = new Date().getFullYear()
 year.innerHTML = years
 
 document.getElementById("real").innerHTML = new Date().getDate();
-let alarmring
 function setAlarm(){
-    
-    alarmring=setInterval(() => {
-        let date = new Date();
-        if (date.getHours() % 12 == userHour.value && date.getMinutes() == userMin.value && amPm == userZone.value){
-            ringtone.play()
-        }
-    }, 1000)
+    let date = new Date();
+    if (date.getHours() % 12 == userHour.value && date.getMinutes() == userMin.value && amPm == userZone.value){
+        ringtone.play()
+    }
     
 }
+ let alarmring=setInterval(() => {
+    let date = new Date();
+    if (date.getHours() % 12 == userHour.value && date.getMinutes() == userMin.value && amPm == userZone.value){
+        ringtone.play()
+    }
+}, 1000)
 
 function stopAlarm(){
+    clearInterval(alarmring)
     ringtone.pause()
     ringtone.currentTime = 0
-    clearInterval(alarmring)
     
 }
